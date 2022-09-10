@@ -81,7 +81,9 @@ function fromMobileToUser(users, mobileDevices, iotDevices) {
         i--;
       }
     }
-    return result;
+    return result.map((user) => {
+      return `${user.user} => ${user.devices}`;
+    });
   }
 
   return findDuplicates(result);
